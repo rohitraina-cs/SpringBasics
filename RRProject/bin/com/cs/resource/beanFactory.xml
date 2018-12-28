@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="employee" class="com.cs.practice.Employee">
+	<!-- <constructor-arg type = "int" value = "164"/>
+      <constructor-arg type = "String" value = "Rohit"/>
+      <constructor-arg type="Object" ref="departMent"></constructor-arg> -->
+      <property name="empId" value="164"></property>
+      <property name="name" value="Rohit"></property>
+      <!-- <property name="departMent" ref="departMent"></property> -->
+</bean>
+
+<bean id="departMent" class="com.cs.practice.DepartMent">
+<property name="deptName" value="CoreDevelopent"></property>
+<property name="deptId" value="456"></property>
+</bean>
+
+<!--  ***EVENT HANDLING***  -->
+<bean id="listener" class="com.cs.EventHandling.Listener"></bean>
+<bean id="source" class="com.cs.EventHandling.Source"></bean>
+
+<!--  ***DEPENDENCY CHECK***-->
+<bean id="parent" class="com.cs.DependencyCheck.Parent" depe>
+<property name="firstName" value="Rohit"></property>
+<property name="lastName" value="Raina"></property>
+</bean>
+
+<bean id="child" class="com.cs.DependencyCheck.Child">
+<property name="firstName" value="XYZ"></property>
+<property name="lastName" value="Raina"></property>
+<property name="parent" ref="parent"></property>
+</bean>
+
+
+</beans>
